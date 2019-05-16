@@ -1,0 +1,52 @@
+Query No 1
+####################################################################
+####################################################################
+
+PREFIX id:   <http://ieee.rkbexplorer.com/id/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX akt:  <http://www.aktors.org/ontology/portal#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX akt:  <http://www.aktors.org/ontology/portal#>
+PREFIX akts: <http://www.aktors.org/ontology/support#>
+PREFIX iai:  <http://www.iai.uni-sb.de/resist#>
+
+SELECT ?title
+From <http://localhost:8890/IEEE>
+WHERE {
+?s akt:has-title ?title 
+FILTER REGEX(?title, "ANYTITLE", "i"). 
+?s akt:has-date ?date.
+?date akts:year-of ?year
+FILTER(?year <= value && ?year >= value).
+}
+
+
+Query No 2
+######################################################################
+######################################################################
+
+PREFIX id:   <http://ieee.rkbexplorer.com/id/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX akt:  <http://www.aktors.org/ontology/portal#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX akt:  <http://www.aktors.org/ontology/portal#>
+PREFIX akts: <http://www.aktors.org/ontology/support#>
+PREFIX iai:  <http://www.iai.uni-sb.de/resist#>
+
+"SELECT distinct ?pub ?title ?abstract ?author_name ?year ?website ?keywords
+From <http://localhost:8890/IEEE>
+WHERE {
+?pub akt:has-title ?title.\r\n" + 
+?pub akte:has-abstract ?abstract. 
+?pub akt:has-author ?author.
+?author akt:full-name ?author_name.
+?pub akt:has-date ?date.
+?date akts:year-of ?year.
+?pub akt:has-web-address ?website.
+?pub iai:has-ieee-keyword ?keywords.
+}
+
+
+

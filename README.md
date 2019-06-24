@@ -1,6 +1,6 @@
 # Linked_Data
 
-1. First we Upload linked database for IEEE to Virtuoso OpenLink using JENA or conductor (.nt, .rdf etc)
+1. First we Upload linked data for IEEE to Virtuoso OpenLink using JENA or conductor (.nt, .rdf etc)
 
 2. Then we create Java GUI to search for papers from IEEE
 

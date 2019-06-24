@@ -14,8 +14,8 @@ import org.apache.jena.rdf.model.Model;
 
 public class RetriveData {
 
-	public static final String tdbDirectory = "C:\\Users\\nauma\\OneDrive\\Desktop\\JENA\\linkedmdb-latest-dump";
-	public static final String dbdump = "C:\\Users\\nauma\\OneDrive\\Desktop\\JENA\\linkedmdb-latest-dump\\ieee-publications-dsn.nt";
+	public static final String tdbDirectory = "<your graph (e.i .nt file) directory path>;
+	public static final String dbdump = "<graph (e.i .nt file) file path>";
 	
 	public List<String> _authors = new ArrayList<String>();
 	public List<String> _keywords = new ArrayList<String>();
